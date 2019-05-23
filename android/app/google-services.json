@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "1066177766191",
+    "firebase_url": "https://fir-push-demo-941cc.firebaseio.com",
+    "project_id": "fir-push-demo-941cc",
+    "storage_bucket": "fir-push-demo-941cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066177766191:android:7ee4ee1d4a92f6fb",
+        "android_client_info": {
+          "package_name": "com.dpslink.SpringAndroidPush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066177766191-euvpe9s6e7vr1mjf6vspd3qo0pkv5qbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMG2YCIyrkU4zUYOWzFCrG11cDZmf6xoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066177766191-euvpe9s6e7vr1mjf6vspd3qo0pkv5qbj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1066177766191-2d78mbjkk4vahnba1pmh9jkjq44qc76d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dpslink.TouchIDPushTest"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066177766191:android:5af78cbffccde2fe",
+        "android_client_info": {
+          "package_name": "com.dpslink.TouchIDPushTest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066177766191-euvpe9s6e7vr1mjf6vspd3qo0pkv5qbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMG2YCIyrkU4zUYOWzFCrG11cDZmf6xoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066177766191-euvpe9s6e7vr1mjf6vspd3qo0pkv5qbj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1066177766191-2d78mbjkk4vahnba1pmh9jkjq44qc76d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dpslink.TouchIDPushTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
