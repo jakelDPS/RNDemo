@@ -93,6 +93,50 @@ const DrawerStack = createDrawerNavigator({
           ),
         }
       },
+      Push: {
+          screen: PushScreen,
+          navigationOptions: {
+              drawerLabel: "Push Notifications",
+              drawerIcon: (
+                  <Image
+                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
+                  />
+              ),
+          }
+      },
+      Camera: {
+          screen: CameraScreen,
+          navigationOptions: {
+              drawerLabel: "Camera",
+              drawerIcon: (
+                  <Image
+                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
+                  />
+              ),
+          }
+      },
+      Barcode: {
+          screen: BarcodeScreen,
+          navigationOptions: {
+              drawerLabel: "Barcode Scanner",
+              drawerIcon: (
+                  <Image
+                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
+                  />
+              ),
+          }
+      },
+      Printer: {
+          screen: PrinterScreen,
+          navigationOptions: {
+              drawerLabel: "Printer",
+              drawerIcon: (
+                  <Image
+                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
+                  />
+              ),
+          }
+      },
       Map: {
         screen: MapScreen,
         navigationOptions: {
@@ -119,7 +163,7 @@ const DrawerStack = createDrawerNavigator({
 
     },
     {
-      drawerPosition: "right",
+      drawerPosition: "left",
     }
 );
 
@@ -142,7 +186,7 @@ const RootStack = createStackNavigator(
 
     },
     {
-      initialRouteName: 'Drawer', //Change to 'Login' when done debugging
+      initialRouteName: 'Login', //Change to 'Login' when done debugging
       mode: 'modal',
       headerMode: 'none',
     }
@@ -224,6 +268,7 @@ export default class App extends React.Component {
     });
 
      */
+
 
   }
 

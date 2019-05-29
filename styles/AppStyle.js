@@ -3,6 +3,20 @@ import {Platform, StatusBar, StyleSheet, Dimensions} from "react-native";
 let { width, height } = Dimensions.get('window');
 
 const appStyle = StyleSheet.create({
+
+    touchableOpacity: {
+      ...Platform.select({
+          ios: {
+              color: 'rgba(151,19,191,0.6)',
+          }
+          ,
+          android: {
+              color: 'rgba(51,204,51, 0.6)',
+          }
+          ,
+      }),
+    },
+
     button: {
         width: width * .6,
         marginTop: 10,

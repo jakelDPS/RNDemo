@@ -1,6 +1,7 @@
 
 import React from "react";
 import {Button, Image, View, Dimensions} from "react-native";
+import CustomButton from "../components/CustomButton.js";
 
 import appStyle from "../styles/AppStyle";
 import styles from '../styles/HomeScreenStyle';
@@ -15,68 +16,22 @@ class HomeScreenUI extends React.Component {
 
                 { this.props.orientation === "PORTRAIT" ?
 
-                    <View style={appStyle.mainView}>
+                    //<View style={appStyle.mainView}>
+                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: 10, marginBottom: 10 }}>
+
                         <Image
                             style={styles.image}
                             source={{uri: this.props.nav.getParam("imageURL", 'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png')}}
                         />
 
-                        <View style={appStyle.button}>
-                            <Button
-                                title="Push Notifications"
-                                color={appStyle.button.color}
-                                onPress={() => {
-                                    this.props.nav.navigate('Push', {
-                                        test: 'From home screen',
-                                    });
-                                }}
-                            />
-                        </View>
-
-                        <View style={appStyle.button}>
-                            <Button
-                                title="Camera"
-                                color={appStyle.button.color}
-                                onPress={() => this.props.nav.navigate("Camera")}
-                            />
-                        </View>
-
-                        <View style={appStyle.button}>
-                            <Button
-                                title="Barcode Scanner"
-                                color={appStyle.button.color}
-                                onPress={() => this.props.nav.navigate("Barcode")}
-                            />
-                        </View>
-
-                        <View style={appStyle.button}>
-                            <Button
-                                title="Maps"
-                                color={appStyle.button.color}
-                                onPress={() => this.props.nav.navigate("Map")}
-                            />
-                        </View>
-
-                        <View style={appStyle.button}>
-                            <Button
-                                title="Printer"
-                                color={appStyle.button.color}
-                                onPress={() => this.props.nav.navigate("Printer")}
-                            />
-                        </View>
-
-                        <View style={appStyle.button}>
-                            <Button
-                                title="Template Example"
-                                color={appStyle.button.color}
+                        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <CustomButton
+                                text="Template Example"
                                 onPress={() => this.props.nav.navigate("Template")}
                             />
-                        </View>
 
-                        <View style={appStyle.button}>
-                            <Button
-                                title="Native Code"
-                                color={appStyle.button.color}
+                            <CustomButton
+                                text="Native Code"
                                 onPress={() => this.props.nav.navigate("Native")}
                             />
                         </View>
@@ -94,53 +49,7 @@ class HomeScreenUI extends React.Component {
                             />
                         </View>
 
-
                         <View style={styles.landscapeColumn}>
-                            <View style={styles.button}>
-                                <Button
-                                    title="Push Notifications"
-                                    color={appStyle.button.color}
-                                    onPress={() => {
-                                        this.props.nav.navigate('Push', {
-                                            test: 'From home screen',
-                                        });
-                                    }}
-                                />
-                            </View>
-
-                            <View style={styles.button}>
-                                <Button
-                                    title="Camera"
-                                    color={appStyle.button.color}
-                                    onPress={() => this.props.nav.navigate("Camera")}
-                                />
-                            </View>
-
-                            <View style={styles.button}>
-                                <Button
-                                    title="Barcode Scanner"
-                                    color={appStyle.button.color}
-                                    onPress={() => this.props.nav.navigate("Barcode")}
-                                />
-                            </View>
-
-                            <View style={styles.button}>
-                                <Button
-                                    title="Maps"
-                                    color={appStyle.button.color}
-                                    onPress={() => this.props.nav.navigate("Map")}
-                                />
-                            </View>
-                        </View>
-
-                        <View style={styles.landscapeColumn}>
-                            <View style={styles.button}>
-                                <Button
-                                    title="Printer"
-                                    color={appStyle.button.color}
-                                    onPress={() => this.props.nav.navigate("Printer")}
-                                />
-                            </View>
 
                             <View style={styles.button}>
                                 <Button
@@ -149,6 +58,10 @@ class HomeScreenUI extends React.Component {
                                     onPress={() => this.props.nav.navigate("Template")}
                                 />
                             </View>
+
+                        </View>
+
+                        <View style={styles.landscapeColumn}>
 
                             <View style={styles.button}>
                                 <Button

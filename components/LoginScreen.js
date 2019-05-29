@@ -47,7 +47,7 @@ class LoginScreen extends React.Component {
     }
 
     login() {
-
+        console.log("MYLOG: calling login");
         const username = this.state.username;
         const password = this.state.password;
         //alert("username = " + this.state.username + ", password = " + this.state.password);
@@ -59,8 +59,8 @@ class LoginScreen extends React.Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username: "email",
-                password: "password"
+                username: "username",
+                password: "password!"
             })
 
         }).then((response) => {
@@ -78,12 +78,13 @@ class LoginScreen extends React.Component {
 
         }).catch((err) =>  {
             this.setState({fetchLoading: false});
-            alert(err);
+            alert("login() " + err);
         });
 
     }
 
     getName(callback) {
+        console.log("MYLOG: " + global.JWT);
         fetch('http://url/getName', {
             method: 'POST',
             headers: {
@@ -98,21 +99,24 @@ class LoginScreen extends React.Component {
             return response.json();
 
         }).then((data) => {
+            console.log("MYLOG: getName");
             global.firstName = data.response.firstName;
             global.lastName = data.response.lastName;
             this.navigateHome(global.JWT, global.firstName, global.lastName);
 
         }).catch(function(err) {
-            console.log(err);
+            console.log("getName() " + err);
         });
     }
 
     navigateHome(jwt, firstName, lastName) {
+
         const resetAction = StackActions.reset({
             index: 0,
             actions: [NavigationActions.navigate({routeName: 'Drawer'})],
         });
         this.props.navigation.dispatch(resetAction);
+
     }
 
     render() {

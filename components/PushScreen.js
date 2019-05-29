@@ -45,16 +45,18 @@ class PushScreen extends React.Component {
 
     onSubscribe() {
 
+        console.log("MYLOG: " + global.username);
+
         this.setState({fetchLoading: true});
         fetch('http://url/createPushTopic', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': "Bearer token"
+                'Authorization': global.JWT
             },
             body: JSON.stringify({
-                contactID: "username",
+                contactID: global.username,
                 domain: "Admin"
             })
 

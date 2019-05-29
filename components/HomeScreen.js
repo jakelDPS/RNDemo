@@ -46,28 +46,13 @@ class HomeScreen extends React.Component {
     static navigationOptions = ({navigation}) => {
         const params = navigation.state.params || {};
 
-        const title = Platform.select({
-            ios: global.firstName + " " + global.lastName,
-            android: "Android"
-        })
+        const title = global.firstName + " " + global.lastName;
 
         return {
             title: title,
             elevation: 1,
             headerRight: null,
-            headerLeft: (
-                <View style={appStyle.buttonLeft}>
-
-                    <TouchableOpacity
-                        color= {styles.modalButton.color}
-                        style={styles.modalButton}
-                        onPress={() => navigation.navigate("LogoutModal")}
-                    >
-                        <Text style={styles.modalText}> Logout </Text>
-                    </TouchableOpacity>
-
-                </View>
-            ),
+            headerLeft: null,
         };
     };
 
