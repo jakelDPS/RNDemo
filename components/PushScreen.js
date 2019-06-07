@@ -16,6 +16,7 @@ class PushScreen extends React.Component {
 
         this.onSubscribe = this.onSubscribe.bind(this);
         this.subscribeHelper = this.subscribeHelper.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
 
     }
 

@@ -1,10 +1,11 @@
 
 import React from "react";
-import {Button, Image, View, Dimensions} from "react-native";
+import {Button, Image, View, SafeAreaView, Dimensions} from "react-native";
 import CustomButton from "../components/CustomButton.js";
 
 import appStyle from "../styles/AppStyle";
 import styles from '../styles/HomeScreenStyle';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class HomeScreenUI extends React.Component {
 
@@ -28,11 +29,13 @@ class HomeScreenUI extends React.Component {
                             <CustomButton
                                 text="Template Example"
                                 onPress={() => this.props.nav.navigate("Template")}
+                                type="darkSquare"
                             />
 
                             <CustomButton
                                 text="Native Code"
                                 onPress={() => this.props.nav.navigate("Native")}
+                                type="darkSquare"
                             />
                         </View>
 

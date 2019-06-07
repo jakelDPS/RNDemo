@@ -2,6 +2,7 @@ import React from "react";
 import {View, Text, Button, FlatList} from "react-native";
 import appStyle from '../styles/AppStyle';
 import styles from '../styles/TemplateLayoutScreenStyle';
+import CustomButton from "./CustomButton";
 
 class TemplateLayoutScreen extends React.Component {
 
@@ -33,7 +34,7 @@ class TemplateLayoutScreen extends React.Component {
     getContacts() {
 
         this.setState({fetchLoading: true});
-        fetch('http://url/getContactsNoPush', {
+        fetch('http://url/api/getContactsNoPush', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -80,13 +81,6 @@ class TemplateLayoutScreen extends React.Component {
             <View style={appStyle.mainView}>
                 <View style={styles.listView}>
 
-                    <View style={{
-                        height: 1,
-                        width: "100%",
-                        backgroundColor: "#000",
-                    }}
-                    />
-
                     {this.state.fetchLoading === false ?
                         <FlatList
                             contentContainerStyle={styles.flatList}
@@ -100,31 +94,24 @@ class TemplateLayoutScreen extends React.Component {
                         <Text style={styles.text}>No contacts available</Text>
                     }
 
-                    <View style={{
-                        height: 1,
-                        width: "100%",
-                        backgroundColor: "#000",
-                    }}
-                    />
-
                 </View>
 
                 <View style={styles.listView}>
 
                     <View style={styles.button}>
-                        <Button
-                            title="Get Contacts"
-                            color={appStyle.button.color}
+                        <CustomButton
+                            text="Get Contacts"
                             onPress={() => this.getContacts()}
+                            type="darkRectangle"
                             disabled={this.state.fetchLoading}
                         />
                     </View>
 
                     <View style={styles.button}>
-                        <Button
-                            title="Go Home"
-                            color={appStyle.button.color}
+                        <CustomButton
+                            text="Go Home"
                             onPress={() => this.props.navigation.navigate('Home')}
+                            type="darkRectangle"
                         />
                     </View>
 

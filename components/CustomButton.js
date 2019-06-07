@@ -5,15 +5,17 @@ import appStyle from "../styles/AppStyle";
 
 class customButton extends Component {
     render() {
-        const { text, onPress} = this.props;
+        const { text, onPress, type, disabled } = this.props;
         return (
 
-            <TouchableOpacity style={styles.buttonStyle}
-                              onPress={() => onPress()}
+            <TouchableOpacity
+                style={ type === "lightSquare" ? styles.lightSquare : type === "darkSquare" ? styles.darkSquare :
+                                      type === "lightRectangle" ? styles.lightRectangle : styles.darkRectangle }
+                onPress={ () => onPress() }
+                disabled={ disabled === true ? true  : false }
             >
-                <TouchableOpacity style={{opacity: 1}}>
-                    <Text style={styles.textStyle}>{text}</Text>
-                </TouchableOpacity>
+                <Text style={type === "lightSquare" || type === "lightRectangle" ? styles.lightStyle : styles.darkStyle} > {text} </Text>
+
             </TouchableOpacity>
         );
     }
@@ -25,14 +27,19 @@ customButton.propTypes = {
 };
 
 const styles = StyleSheet.create({
-    textStyle: {
+    darkStyle: {
         fontSize:20,
         opacity: 1,
         color: '#000',
         textAlign: 'center',
     },
-
-    buttonStyle: {
+    lightStyle: {
+        fontSize:20,
+        opacity: 1,
+        color: '#FFF',
+        textAlign: 'center',
+    },
+    darkSquare: {
         margin: 10,
         backgroundColor: appStyle.touchableOpacity.color,
         borderRadius:10,
@@ -42,7 +49,40 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         alignItems: 'center',
         justifyContent: 'center',
-    }
+    },
+    lightSquare: {
+        margin: 10,
+        backgroundColor: appStyle.touchableOpacity.color,
+        borderRadius:10,
+        borderColor: "#FFF",
+        height: 150,
+        width: 150,
+        borderWidth: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    darkRectangle: {
+        margin: 10,
+        backgroundColor: appStyle.touchableOpacity.color,
+        borderRadius:10,
+        borderColor: "#000",
+        height: 40,
+        width: 150,
+        borderWidth: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    lightRectangle: {
+        margin: 10,
+        backgroundColor: appStyle.touchableOpacity.color,
+        borderRadius:10,
+        borderColor: "#FFF",
+        height: 40,
+        width: 150,
+        borderWidth: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
 export default customButton;

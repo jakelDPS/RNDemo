@@ -7,11 +7,11 @@ const appStyle = StyleSheet.create({
     touchableOpacity: {
       ...Platform.select({
           ios: {
-              color: 'rgba(151,19,191,0.6)',
+              color: 'rgba(151,19,191,0.4)',
           }
           ,
           android: {
-              color: 'rgba(51,204,51, 0.6)',
+              color: 'rgba(51,204,51, 0.4)',
           }
           ,
       }),

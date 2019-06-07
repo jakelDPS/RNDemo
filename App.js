@@ -12,6 +12,7 @@ import TemplateLayoutScreen from './components/TemplateLayoutScreen'
 import ToastScreen from './components/ToastScreen';
 import NativeiOSScreen from './components/NativeiOSScreen';
 import LoginScreen from './components/LoginScreen';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import appStyle from './styles/AppStyle';
 
 import firebase from 'react-native-firebase';
@@ -87,9 +88,7 @@ const DrawerStack = createDrawerNavigator({
         navigationOptions: {
           drawerLabel: 'Home',
           drawerIcon: (
-              <Image
-                  source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
-              />
+              <Icon name="home" size={20} color="#000" />
           ),
         }
       },
@@ -98,9 +97,7 @@ const DrawerStack = createDrawerNavigator({
           navigationOptions: {
               drawerLabel: "Push Notifications",
               drawerIcon: (
-                  <Image
-                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
-                  />
+                  <Icon name="exclamation" size={20} color="#000" />
               ),
           }
       },
@@ -109,9 +106,7 @@ const DrawerStack = createDrawerNavigator({
           navigationOptions: {
               drawerLabel: "Camera",
               drawerIcon: (
-                  <Image
-                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
-                  />
+                  <Icon name="camera" size={20} color="#000" />
               ),
           }
       },
@@ -120,9 +115,7 @@ const DrawerStack = createDrawerNavigator({
           navigationOptions: {
               drawerLabel: "Barcode Scanner",
               drawerIcon: (
-                  <Image
-                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
-                  />
+                  <Icon name="barcode" size={20} color="#000" />
               ),
           }
       },
@@ -131,9 +124,7 @@ const DrawerStack = createDrawerNavigator({
           navigationOptions: {
               drawerLabel: "Printer",
               drawerIcon: (
-                  <Image
-                      source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
-                  />
+                  <Icon name="print" size={20} color="#000" />
               ),
           }
       },
@@ -142,9 +133,7 @@ const DrawerStack = createDrawerNavigator({
         navigationOptions: {
           drawerLabel: "Maps",
           drawerIcon: (
-              <Image
-                  source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
-              />
+              <Icon name="map" size={20} color="#000" />
           ),
         }
       },
@@ -153,9 +142,7 @@ const DrawerStack = createDrawerNavigator({
         navigationOptions: {
           drawerLabel: 'Logout',
           drawerIcon: (
-              <Image
-                  source={'https://cdn-images-1.medium.com/max/1600/0*Qup3L7adSA8iZO_R.png'}
-              />
+              <Icon name="sign-out" size={20} color="#000" />
           ),
         }
       },

@@ -16,6 +16,13 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         fontSize: 20,
         marginTop: 10,
+        color: "white",
+        borderBottomColor: "white",
+    },
+
+    backgroundImage: {
+        flex: 1,
+        resizeMode: 'cover',
     },
 
 });

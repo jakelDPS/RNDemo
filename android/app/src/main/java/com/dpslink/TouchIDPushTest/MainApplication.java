@@ -2,6 +2,7 @@ package com.dpslink.TouchIDPushTest;
 
 import android.app.Application;
 
+import com.dpslink.TouchIDPushTest.BuildConfig;
 import com.facebook.react.ReactApplication;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
@@ -41,7 +42,6 @@ public class MainApplication extends Application implements ReactApplication {
           new RNCameraPackage(),
           new RNPrintPackage(),
           new CustomToastPackage()
-
 
       );
     }

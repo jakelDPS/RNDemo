@@ -1,9 +1,12 @@
 import React from "react";
-import { View, Text, Button, Platform, TextInput, KeyboardAvoidingView, TouchableOpacity, Keyboard, Dimensions} from "react-native";
+import { View, Text, Button, Platform, TextInput, KeyboardAvoidingView, TouchableOpacity, Keyboard, Dimensions, ImageBackground} from "react-native";
 import { StackActions, NavigationActions } from 'react-navigation';
 import appStyle from '../styles/AppStyle';
 import styles from '../styles/LoginScreenStyle';
 import Orientation from "react-native-orientation";
+import loginBackground from '../images/dark-bg.jpg';
+import CustomButton from "./CustomButton";
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 class LoginScreen extends React.Component {
 
@@ -21,7 +24,8 @@ class LoginScreen extends React.Component {
             width: Dimensions.get('window').width,
         };
 
-        this.componentWillMount = this.componentWillMount.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
+        this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.login = this.login.bind(this);
         this.getName = this.getName.bind(this);
         this.navigateHome = this.navigateHome.bind(this);
@@ -34,12 +38,18 @@ class LoginScreen extends React.Component {
             title: "Login",
         };
     };
-    c
-    componentWillMount() {
+
+    componentDidMount() {
 
         Orientation.addOrientationListener(this.orientationDidChange);
 
     };
+
+    componentWillUnmount() {
+
+        Orientation.removeOrientationListener(this.orientationDidChange);
+
+    }
 
     orientationDidChange(orientation) {
         this.setState({height: Dimensions.get('window').height});
@@ -59,8 +69,8 @@ class LoginScreen extends React.Component {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username: "username",
-                password: "password!"
+                username: username,
+                password: password
             })
 
         }).then((response) => {
@@ -70,7 +80,7 @@ class LoginScreen extends React.Component {
 
             this.setState({fetchLoading: false});
             global.JWT = data;
-            global.username = "username";
+            global.username = this.state.username;
 
         }).then(() => {
 
@@ -121,18 +131,24 @@ class LoginScreen extends React.Component {
 
     render() {
         return (
+
+            <ImageBackground source={ loginBackground }
+                   style={styles.backgroundImage}>
+
+
             <TouchableOpacity style={appStyle.mainView} activeOpacity={1} onPress={() => Keyboard.dismiss()}>
 
                 <KeyboardAvoidingView style={appStyle.mainView}
                                       behavior= { Platform.OS === "ios" ? "padding" : null}>
 
-                    <Text style={{ fontSize: 50, marginBottom: 20 }}>Login to app</Text>
+                    <Icon name="hooli" size={150} color="#FFF" />
 
                     <TextInput
                         name="username"
                         style={[styles.textInput, {height: 40, width: this.state.width * .6}]}
                         autoCapitalize="none"
                         placeholder="Username"
+                        placeholderTextColor="white"
                         onChangeText={(value) => this.setState({username: value})}
                         value={this.state.username}
                         editable={!this.state.fetchLoading}
@@ -142,24 +158,23 @@ class LoginScreen extends React.Component {
                         name="password"
                         style={[styles.textInput, {height: 40, width: this.state.width * .6}]}
                         placeholder="Password"
+                        placeholderTextColor="white"
                         secureTextEntry={true}
                         onChangeText={(value) => this.setState({password: value})}
                         value={this.state.password}
                         editable={!this.state.fetchLoading}
                     />
 
-                    <View style={appStyle.button}>
-                        <Button
-                            title="Login"
-                            color={appStyle.button.color}
-                            onPress={() => this.login()}
-                            disabled={this.state.fetchLoading}
-                        />
-                    </View>
+                    <CustomButton
+                        text="Login"
+                        onPress={() => this.login()}
+                        type="lightRectangle"
+                    />
 
                 </KeyboardAvoidingView>
 
             </TouchableOpacity>
+        </ImageBackground>
         );
     }
 }

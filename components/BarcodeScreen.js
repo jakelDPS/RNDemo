@@ -31,7 +31,7 @@ class BarcodeScreen extends Component {
             if (!this.barcodeCodes.includes(scanResult.data)) {
                 this.barcodeCodes.push(scanResult.data);
                 //console.warn('onBarCodeRead call');
-                alert(scanResult.type);
+                alert(scanResult.data);
             }
         }
         return;
