@@ -62,15 +62,15 @@ class LoginScreen extends React.Component {
         const password = this.state.password;
         //alert("username = " + this.state.username + ", password = " + this.state.password);
         this.setState({fetchLoading: true});
-        fetch('http://url/login', {
+        fetch('https://10.1.4.16:8089/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                username: username,
-                password: password
+                username: "jake.losin@dpslink.com", // TODO: Change back to username
+                password: "Jakepass1!" // TODO: Change back to password
             })
 
         }).then((response) => {
@@ -95,7 +95,7 @@ class LoginScreen extends React.Component {
 
     getName(callback) {
         console.log("MYLOG: " + global.JWT);
-        fetch('http://url/getName', {
+        fetch('https://10.1.4.16:8089/api/getName', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

@@ -49,7 +49,7 @@ class PushScreen extends React.Component {
         console.log("MYLOG: " + global.username);
 
         this.setState({fetchLoading: true});
-        fetch('http://url/createPushTopic', {
+        fetch('https://10.1.4.16:8089/api/createPushTopic', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

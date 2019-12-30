@@ -4,13 +4,14 @@ import android.app.Application;
 
 import com.dpslink.TouchIDPushTest.BuildConfig;
 import com.facebook.react.ReactApplication;
+import org.reactnative.camera.RNCameraPackage;
+import com.github.yamill.orientation.OrientationPackage;
+import com.christopherdro.RNPrint.RNPrintPackage;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
-import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
-import com.github.yamill.orientation.OrientationPackage;
-import org.reactnative.camera.RNCameraPackage;
-import com.christopherdro.RNPrint.RNPrintPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -34,13 +35,14 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNCameraPackage(),
+            new OrientationPackage(),
+            new RNPrintPackage(),
+            new MapsPackage(),
+            new RNGestureHandlerPackage(),
           new RNFirebasePackage(),
           new RNFirebaseMessagingPackage(),
           new RNFirebaseNotificationsPackage(),
-          new RNGestureHandlerPackage(),
-          new OrientationPackage(),
-          new RNCameraPackage(),
-          new RNPrintPackage(),
           new CustomToastPackage()
 
       );

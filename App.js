@@ -28,9 +28,9 @@ const MainStack = createStackNavigator(
         //    headerBackTitle: "Home",
         //},
       },
-      Push: {
-        screen: PushScreen,
-      },
+      //Push: {
+      //  screen: PushScreen,
+      //},
       Camera: {
         screen: CameraScreen,
       },
@@ -173,7 +173,7 @@ const RootStack = createStackNavigator(
 
     },
     {
-      initialRouteName: 'Login', //Change to 'Login' when done debugging
+      initialRouteName: 'Login',
       mode: 'modal',
       headerMode: 'none',
     }

@@ -34,7 +34,7 @@ class TemplateLayoutScreen extends React.Component {
     getContacts() {
 
         this.setState({fetchLoading: true});
-        fetch('http://url/api/getContactsNoPush', {
+        fetch('https://url/api/getContactsNoPush', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
