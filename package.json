@@ -9,7 +9,7 @@
   "dependencies": {
     "braces": "^3.0.2",
     "handlebars": "^4.5.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mem": "^6.0.1",
     "mixin-deep": "^2.0.1",
     "react": "16.8.6",
