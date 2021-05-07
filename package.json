@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "braces": "^3.0.2",
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.7",
     "lodash": "^4.17.15",
     "mem": "^6.0.1",
     "mixin-deep": "^2.0.1",
